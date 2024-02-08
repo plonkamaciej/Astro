@@ -7,18 +7,24 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="en">
+
+		<head>
+			<meta charset="UTF-8" />
+			<meta name="description" content="Astro description" />
+			<meta name="viewport" content="width=device-width" />
+			<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+			<meta name="generator" content={Astro.generator} />
+			<title>{title}</title>
+		</head>
+		<body>
+			<slot />
+		</body>
+		<div class="planeImg"></div>
+		<footer class="bg-[#0a0a11] w-full h-[70%] absolute bottom-[-50vh] text-white  flex flex-col justify-center">
+			<h1 class="text-9xl font-extrabold m-auto">Maciej Płonka</h1>
+		</footer>
+	
 </html>
 
 <style is:global>
@@ -35,8 +41,16 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		background-color: #0a0a11;
+		background-image:  
+		radial-gradient(closest-corner circle at 50% 80%, rgb(42, 63, 112) 0%, rgba(0, 0, 0, 0) 70%, transparent),
+		radial-gradient(closest-corner circle at 100% 40%, rgb(69, 31, 24) 0%, rgba(0, 0, 0, 0) 75%, transparent),
+		
+		url("/bg-grid.png");
+		background-repeat: repeat;
+		height: 150vh;
+		box-shadow: inset 100vw 0 0 0 rgba(11, 6, 6, 0.2);
+		
 	}
 	code {
 		font-family:
@@ -49,4 +63,20 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
+
+	#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3); /* Black background with opacity */
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  
+}
+
+
 </style>
