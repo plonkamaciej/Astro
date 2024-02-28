@@ -1,9 +1,10 @@
 ---
 interface Props {
 	title: string;
+	next: string;
 }
 
-const { title } = Astro.props;
+const { title, next } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +23,11 @@ const { title } = Astro.props;
 		</body>
 		<div class="planeImg"></div>
 		<footer class="bg-[#0a0a11] w-full h-[70%] absolute bottom-[-50vh] text-white  flex flex-col justify-center">
-			<h1 class="text-9xl font-extrabold m-auto">Maciej Płonka</h1>
+			<div class="w-full flex justify-between">
+				<a class=' p-12 text-lg underline' href="/">Home</a>
+				<a class=' p-12 text-lg underline' href={next}>{next}</a>
+			</div>
+			<h1 class="text-3xl font-extrabold m-auto">Maciej Płonka</h1>
 		</footer>
 	
 </html>
@@ -30,8 +35,8 @@ const { title } = Astro.props;
 <style is:global>
 	:root {
 		--accent: 236, 58, 34;
-		--accent-light: 255, 104, 50;
-		--accent-dark: 255, 104, 50;
+		--accent-light: 255, 114, 60;
+		--accent-dark: 255, 114, 60;
 		--accent-gradient: linear-gradient(
 			45deg,
 			rgb(var(--accent)),
