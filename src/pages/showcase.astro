@@ -1,7 +1,85 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import Section from "../components/Main.astro"
+
 ---
 
-<Layout title="threedei.js" next="/technology">
+<Layout title="Projects" next="/technology">
+    <main>
+        <h1>
+           Universitity and <span class="text-gradient">Comercial</span> projects
+        </h1>
+        <div class="scroll">
+        <div class=" grid grid-cols-2 gap-10 w-full">
+            <Section width={"w-full"} img="/photography.png">
+                
+            </Section>
+            <Section width={"w-full"} img="">
+                Fullstack Car Workshop System
+            </Section>
+            <Section width={"w-full"} img="/photography.png">
+                
+            </Section>
+            <Section width={"w-full"} img="">
+                Fullstack Voting System
+            </Section>
+            <Section width={"w-full"} img="">
+                
+            </Section>
+            <Section width={"w-full"} img="">
+                Frontend Photography portfolio
+            </Section>
+            <Section width={"w-full"} img="">
+                
+            </Section>
+            <Section width={"w-full"} img="">
+                C++ Space invaders
+            </Section>
+            
+          
+        </div>
+    </div>
     
+    </main>
 </Layout>
+
+<style>
+    .text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+
+    main {
+        background-image: "bg-grid.png";
+        margin: auto;
+		padding: 1rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+
+    }
+
+    h1 {
+		margin-top: 3vh;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+
+    .scroll {
+        overflow-y: auto; 
+            overflow-x: hidden; 
+            height: 65vh; 
+    }
+    .scroll::-webkit-scrollbar {
+    display: none;
+}
+
+</style>

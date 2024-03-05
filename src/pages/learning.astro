@@ -8,11 +8,11 @@ import Section from "../components/Main.astro"
         <h1>
             Next.js and <span class="text-gradient">Astro</span>
         </h1>
-        <div class="flex mt-20 justify-evenly">
-            <Section>
+        <div class="grid mt-20 grid-cols-2 gap-10">
+            <Section width={"w-full"} img ="">
                 Astro
             </Section>
-            <Section>
+            <Section width={"w-full"} img="">
                 Next
             </Section>
         </div>
@@ -33,7 +33,7 @@ import Section from "../components/Main.astro"
         background-image: "bg-grid.png";
         margin: auto;
 		padding: 1rem;
-		width: 800px;
+		width: 1000px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;

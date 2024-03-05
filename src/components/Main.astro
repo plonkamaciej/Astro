@@ -1,9 +1,14 @@
 ---
-
+interface Props{
+    width: String;
+    img: string;
+}
+const { width, img } = Astro.props;
 ---
 
-<div class="rounded-xl overflow-hidden shadow-lg bg-slate-200 w-[45%]">
-    <div class="flex p-8 justify-evenly bg-white w-full">
+<div class={`rounded-xl overflow-hidden shadow-lg bg-slate-200 ${width}`}>
+    <div class=" bg-white h-40">
+        {img ? <img src={img} alt="Image" class="object-contain  w-full"> : undefined}
     </div> 
     <div class=" text-black text-xl p-8">
         <slot/>

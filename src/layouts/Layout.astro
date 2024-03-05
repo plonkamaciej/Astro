@@ -4,6 +4,7 @@ interface Props {
 	next: string;
 }
 
+
 const { title, next } = Astro.props;
 ---
 
@@ -18,11 +19,12 @@ const { title, next } = Astro.props;
 			<meta name="generator" content={Astro.generator} />
 			<title>{title}</title>
 		</head>
-		<body>
+		<body class="min-h-full">
 			<slot />
 		</body>
 		<div class="planeImg"></div>
-		<footer class="bg-[#0a0a11] w-full h-[70%] absolute bottom-[-50vh] text-white  flex flex-col justify-center">
+	
+		<footer class="bg-[#0a0a11] w-full h-[63%] absolute  bottom-[-50vh] text-white  flex flex-col justify-center">
 			<div class="w-full flex justify-between">
 				<a class=' p-12 text-lg underline' href="/">Home</a>
 				<a class=' p-12 text-lg underline' href={next}>{next}</a>
@@ -55,6 +57,8 @@ const { title, next } = Astro.props;
 		background-repeat: repeat;
 		height: 150vh;
 		box-shadow: inset 100vw 0 0 0 rgba(11, 6, 6, 0.2);
+		scroll-behavior: smooth;
+		
 		
 	}
 	code {
@@ -68,6 +72,7 @@ const { title, next } = Astro.props;
 			Courier New,
 			monospace;
 	}
+
 
 	#overlay {
   position: fixed; /* Sit on top of the page content */
