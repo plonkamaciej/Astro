@@ -1,14 +1,27 @@
 ---
 interface Props{
     width: String;
-    img: string;
+    img?: string;
+    logos?: Array<string>;
+    
 }
-const { width, img } = Astro.props;
+const { width, img, logos} = Astro.props;
 ---
 
-<div class={`rounded-xl overflow-hidden shadow-lg bg-slate-200 ${width}`}>
-    <div class=" bg-white h-40">
-        {img ? <img src={img} alt="Image" class="object-contain  w-full"> : undefined}
+<div class={`${img ? "" : "rounded-2xl"} overflow-hidden shadow-lg  ${width} bg-slate-200`}>
+    
+    <div class={`${img ? "h-40" : "bg-white h-40"}`}>
+        {img ? <img src={img} alt="Image" class="object-contain w-full h-max"> : undefined}
+        {logos ? 
+            <div class="flex p-8 justify-evenly bg-white w-full">
+
+                {logos.map((logo, index) => (
+          <img width="100" src={logo} alt={`Logo ${index}`} />
+        ))}
+
+
+        </div> : null
+        }
     </div> 
     <div class=" text-black text-xl p-8">
         <slot/>
