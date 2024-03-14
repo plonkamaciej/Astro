@@ -5,7 +5,7 @@ import Section from "../components/Main.astro"
 ---
 
 <Layout title="Projects" next="/technology">
-    <main>
+    <main class="md: p-4">
         
         <h1>
            Universitity and <span class="text-gradient">Comercial</span> projects
@@ -58,6 +58,9 @@ import Section from "../components/Main.astro"
     .scroll {
         display: none;
     }
+    main {
+        padding: 0;
+    }
     }
 
     .text-gradient {
@@ -71,7 +74,6 @@ import Section from "../components/Main.astro"
     main {
         background-image: "bg-grid.png";
         margin: auto;
-		padding: 1rem;
 		width: 1200px;
 		max-width: calc(100% - 2rem);
 		color: white;
