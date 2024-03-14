@@ -3,19 +3,19 @@ import Layout from "../layouts/Layout.astro"
 import Section from "../components/Main.astro"
 ---
 
-<Layout title="Learning", next="https://github.com/plonkamaciej">
+<Layout title="Learning", next="https://github.com/plonkamaciej", placeholder="Github">
     <main>
         <h1>
             Next.js and <span class="text-gradient">Astro</span>
         </h1>
         <div class="grid mt-20 grid-cols-2 gap-10">
-            <Section width={"w-full"} logos = {["./astro.svg"]}>
+            <Section width={"w-full"} logos = {["/astro.svg"]}>
                 <h1>Astro</h1>
                 <p> a
                     Astro.js is a web development framework gaining popularity for its focus on performance and developer experience. Lately, a new integration called Astro DB has recently been added. This integration allows you to leverage a powerful, local, type-safe SQL database specifically designed for the Astro ecosystem. This means you can develop locally with Astro and seamlessly deploy your database through your Astro Studio dashboard. Astro DB offers type-safe SQL queries, giving you the benefit of catching errors during development and ensuring data integrity
                 </p>
             </Section>
-            <Section width={"w-full"} logos={["./next-js.svg"]}>
+            <Section width={"w-full"} logos={["/next-js.svg"]}>
                 <h1>Next.js</h1>
                 <p>Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.
 
