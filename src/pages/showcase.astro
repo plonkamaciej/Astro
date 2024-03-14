@@ -6,9 +6,12 @@ import Section from "../components/Main.astro"
 
 <Layout title="Projects" next="/technology">
     <main>
+        
         <h1>
            Universitity and <span class="text-gradient">Comercial</span> projects
         </h1>
+        <h1 class="md:hidden">Please display this page on PC or laptop.</h1>
+        
         <div class="scroll">
         <div class=" grid grid-cols-2 gap-10 w-full">
             <Section width={"w-full"} img="/warsztat.png">
@@ -48,6 +51,15 @@ import Section from "../components/Main.astro"
 </Layout>
 
 <style>
+
+    
+@media only screen and (max-width: 600px) { /* Example breakpoint for smartphones */
+        
+    .scroll {
+        display: none;
+    }
+    }
+
     .text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
