@@ -4,11 +4,14 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Welcome to Astro Test Site." next="/learning">
 	<main>
-<div class="flex mt-20 justify-evenly">
-    <div class="rounded-xl overflow-hidden shadow-lg bg-slate-200 w-[45%]">
+    <h1>
+      My Technology <span class="text-gradient">Stack</span>
+  </h1>
+<div class="grid mt-20 md:grid-cols-2 gap-10 items-center">
+    <div class="rounded-xl overflow-hidden shadow-lg bg-slate-200 w-[100%]">
         <div class="flex p-8 justify-evenly bg-white w-full">
-        <img width="140" src="/tailwind.svg" alt="tailwind logo">
-        <img width="130" src="/react.svg" alt="react logo">
+        <img width="100" src="/tailwind.svg" alt="tailwind logo">
+        <img width="100" src="/react.svg" alt="react logo">
         <img width="100" src="/astro.svg" alt="react logo">
         </div>
         
@@ -29,11 +32,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-lg bg-slate-200 w-[45%]">
+      <div class="rounded-xl overflow-hidden shadow-lg bg-slate-200 w-[100%]">
         <div class="flex p-8 justify-evenly bg-white w-full">
-        <img width="140" src="/java.svg" alt="tailwind logo">
-        <img width="110" src="/node.svg" alt="react logo">
-        <img width="140" src="/postgresql.svg" alt="react logo">
+        <img width="120" src="/java.svg" alt="tailwind logo">
+        <img width="90" src="/node.svg" alt="react logo">
+        <img width="120" src="/postgresql.svg" alt="react logo">
         </div>
         
         <div class="px-6 py-4">
@@ -56,12 +59,34 @@ import Layout from '../layouts/Layout.astro';
 </div>
 		
 		
-		
 	</main>
 </Layout>
 
 <style>
+    .text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+
     main {
-        background-image: "bg-grid.png";
+        margin: auto;
+		padding: 1rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		font-size: 20px;
+		line-height: 1.6;
     }
+
+    h1 {
+    color: white;
+		margin-top: 3vh;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 3vh;
+	}
 </style>

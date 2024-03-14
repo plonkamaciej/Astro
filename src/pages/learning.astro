@@ -8,10 +8,10 @@ import Section from "../components/Main.astro"
         <h1>
             Next.js and <span class="text-gradient">Astro</span>
         </h1>
-        <div class="grid mt-20 grid-cols-2 gap-10">
+        <div class="grid mt-20 md:grid-cols-2 gap-10">
             <Section width={"w-full"} logos = {["/astro.svg"]}>
                 <h1>Astro</h1>
-                <p> a
+                <p>
                     Astro.js is a web development framework gaining popularity for its focus on performance and developer experience. Lately, a new integration called Astro DB has recently been added. This integration allows you to leverage a powerful, local, type-safe SQL database specifically designed for the Astro ecosystem. This means you can develop locally with Astro and seamlessly deploy your database through your Astro Studio dashboard. Astro DB offers type-safe SQL queries, giving you the benefit of catching errors during development and ensuring data integrity
                 </p>
             </Section>
@@ -38,7 +38,6 @@ import Section from "../components/Main.astro"
 	}
 
     main {
-        background-image: "bg-grid.png";
         margin: auto;
 		padding: 1rem;
 		width: 1200px;

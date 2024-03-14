@@ -23,9 +23,9 @@ const { title, next, placeholder } = Astro.props;
 
 <body>
     <slot/>
-    <div class="planeImg"></div>
 </body>
-    <footer class="bg-[#0a0a11] w-full h-[63%] absolute bottom-[-50vh] text-white flex flex-col justify-center">
+
+    <footer class="bg-[#0a0a11] w-full h-[63%] text-white flex flex-col justify-center">
         <div class="w-full flex justify-between">
             <a class='p-12 text-lg underline' href="/">Home</a>
             <a class='p-12 text-lg underline' href={next}>{placeholder? placeholder : next}</a>
@@ -91,13 +91,27 @@ const { title, next, placeholder } = Astro.props;
   
 }
 
+@media screen and (min-width: 800px) {
+
+		footer {
+			position: absolute;
+			bottom: -50vh;
+		}	
+}
+
+
 @media only screen and (max-width: 600px) { /* Example breakpoint for smartphones */
         html {
             height: auto; /* Remove fixed height */
 			width: 100%;
 			overflow-x: hidden;
         }
+		body {
+			height: 100%;
+		}
+		footer {
+			position: relative;
+		}
     }
-
 
 </style>
