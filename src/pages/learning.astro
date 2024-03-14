@@ -9,11 +9,19 @@ import Section from "../components/Main.astro"
             Next.js and <span class="text-gradient">Astro</span>
         </h1>
         <div class="grid mt-20 grid-cols-2 gap-10">
-            <Section width={"w-full"} img ="">
-                Astro
+            <Section width={"w-full"} logos = {["./astro.svg"]}>
+                <h1>Astro</h1>
+                <p> a
+                    Astro.js is a web development framework gaining popularity for its focus on performance and developer experience. Lately, a new integration called Astro DB has recently been added. This integration allows you to leverage a powerful, local, type-safe SQL database specifically designed for the Astro ecosystem. This means you can develop locally with Astro and seamlessly deploy your database through your Astro Studio dashboard. Astro DB offers type-safe SQL queries, giving you the benefit of catching errors during development and ensuring data integrity
+                </p>
             </Section>
-            <Section width={"w-full"} img="">
-                Next
+            <Section width={"w-full"} logos={["./next-js.svg"]}>
+                <h1>Next.js</h1>
+                <p>Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.
+
+                    Under the hood, Next.js also abstracts and automatically configures tooling needed for React, like bundling, compiling, and more. This allows you to focus on building your application instead of spending time with configuration.
+                </p>
+                <p class="mt-3">currently learning with Maximilian Schwarzmüller Next.js course</p>
             </Section>
         </div>
     
@@ -33,7 +41,7 @@ import Section from "../components/Main.astro"
         background-image: "bg-grid.png";
         margin: auto;
 		padding: 1rem;
-		width: 1000px;
+		width: 1200px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
@@ -46,7 +54,11 @@ import Section from "../components/Main.astro"
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
-		margin-bottom: 1em;
+		margin-bottom: 3vh;
 	}
+
+    p {
+        text-align: justify;
+    }
 
 </style>
