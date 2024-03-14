@@ -11,28 +11,28 @@ const { title, next } = Astro.props;
 <!doctype html>
 <html lang="en">
 
-		<head>
-			<meta charset="UTF-8" />
-			<meta name="description" content="Astro description" />
-			<meta name="viewport" content="width=device-width" />
-			<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-			<meta name="generator" content={Astro.generator} />
-			<title>{title}</title>
-		</head>
-		<body class="min-h-full">
-			<slot />
-		</body>
-		<div class="planeImg"></div>
-	
-		<footer class="bg-[#0a0a11] w-full h-[63%] absolute  bottom-[-50vh] text-white  flex flex-col justify-center">
-			<div class="w-full flex justify-between">
-				<a class=' p-12 text-lg underline' href="/">Home</a>
-				<a class=' p-12 text-lg underline' href={next}>{next}</a>
-			</div>
-			<h1 class="text-3xl font-extrabold m-auto">Maciej Płonka</h1>
-			<p class="text-xl font-extrabold m-auto">This website was built using Astro</p>
-		</footer>
-	
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Added initial-scale -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+</head>
+
+<body class="min-h-full">
+    <slot></slot>
+    <div class="planeImg"></div>
+    <footer class="bg-[#0a0a11] w-full h-[63%] absolute bottom-0 text-white flex flex-col justify-center"> <!-- Removed bottom-[-50vh] -->
+        <div class="w-full flex justify-between">
+            <a class='p-12 text-lg underline' href="/">Home</a>
+            <a class='p-12 text-lg underline' href={next}>{next}</a>
+        </div>
+        <h1 class="text-3xl font-extrabold m-auto">Maciej Płonka</h1>
+        <p class="text-xl font-extrabold m-auto">This website was built using Astro</p>
+    </footer>
+</body>
+
 </html>
 
 <style is:global>
@@ -88,6 +88,19 @@ const { title, next } = Astro.props;
   z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
   
 }
+
+@media only screen and (max-width: 600px) { /* Example breakpoint for smartphones */
+        html {
+            height: auto; /* Remove fixed height */
+        }
+        .planeImg {
+            display: none; /* Hide plane image on smaller screens */
+        }
+        .bg-[#0a0a11] {
+            height: auto; /* Remove fixed height */
+            padding-bottom: 50px; /* Add some padding at the bottom */
+        }
+    }
 
 
 </style>
