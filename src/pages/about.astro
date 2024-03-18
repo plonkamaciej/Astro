@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Card from '../components/Section.astro';
+---
+
+<Layout title="Learning", next="https://github.com/plonkamaciej", placeholder="Github">
+    <main>
+        <h1>
+            About <span class="text-gradient">me</span>
+        </h1>
+    <div class="">
+        <Card title="test" bg="bg-red-600" body="Hello"></Card>
+        <Card bg="bg-blue-600"></Card>
+        <Card bg="bg-green-600"></Card>
+
+    </div>
+    </main>
+</Layout>
+<style>
+
+    Card {
+        position: relative;
+        left: 0px;
+    }
+
+    Card:not(:first-child) {
+        margin-left: -100px;
+        margin-top: -20px
+    }
+</style>
