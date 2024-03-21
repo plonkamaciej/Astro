@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout2.astro"
 import Card from '../components/Section.astro';
 ---
 
@@ -8,23 +8,47 @@ import Card from '../components/Section.astro';
         <h1>
             About <span class="text-gradient">me</span>
         </h1>
-    <div class="">
-        <Card title="test" bg="bg-red-600" body="Hello"></Card>
-        <Card bg="bg-blue-600"></Card>
-        <Card bg="bg-green-600"></Card>
-
-    </div>
+        <div class="grid justify-center">
+          <Card bg={"bg-yellow-400 col-start-1 row-start-1 size-96"} />
+          <Card bg={"bg-yellow-400 col-start-1 row-start-1 size-96"}/>
+          <Card bg={"bg-red-400 col-start-1 row-start-1 m-4 size-96"} />
+          <Card title={"Student!"} 
+          body={
+          "Hey there! I'm Maciej, a 23-year-old student at Politechnika Śląska. With five years in front-end and three in backend development, I'm passionate about tech. At university, I'm expanding my knowledge while staying ahead of industry trends. Outside of class, I love exploring emerging technologies. I thrive on challenges, whether crafting sleek interfaces or building robust backend systems."
+          } 
+          bg={"bg-blue-400 size-96 col-start-1 row-start-1 m-8 border-4 border-white"} />
+          
+        </div>
     </main>
 </Layout>
+
 <style>
 
-    Card {
-        position: relative;
-        left: 0px;
-    }
+main {
+		margin: auto;
+		padding: 1rem;
+		width: 100%;
+        height: 100vh;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
 
-    Card:not(:first-child) {
-        margin-left: -100px;
-        margin-top: -20px
-    }
+    .text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+
+    h1 {
+		margin-top: 3vh;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
 </style>
