@@ -1,6 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout2.astro"
 import Section from "../components/Main.astro"
+import Img from "../components/Img.astro"
+
 
 ---
 
@@ -14,30 +16,25 @@ import Section from "../components/Main.astro"
         
         <div class="scroll">
         <div class=" grid grid-cols-2 gap-10 w-full">
-            <Section width={"w-full"} img="/warsztat.png">
-                
-            </Section>
+            <Img classes={"w-full"} img={"/warsztat.png"} />
             <Section width={"w-full"} logos={["/java.svg", "/react.svg", "/tailwind.svg"]}>
                 Fullstack Car Workshop System
                 <p>Mostly backend: RESTFUL API and database operations</p>
             </Section>
-            <Section width={"w-full"} img="/photography.png">
-                
-            </Section>
+            <Img classes={"w-full"} img="/photography.png"/>
+          
             <Section width={"w-full"} logos={["/wordpress.png", "/bootstrap.png", "/html.png"]}>
                 Frontend Photography portfolio
                 <p>Commercial project for a photographer</p>
             </Section>
-            <Section width={"w-full"} img="/cli.webp">
+            <Img classes={"w-full"} img="/cli.webp" />
                 
-            </Section>
             <Section width={"w-full"} logos={["/mysql.png", "/python.png"]}>
                 Python Librery System
                 <p>System for Library with basic CRUD operations using mySQL database</p>
             </Section>
-            <Section width={"w-full"} img="/game.png">
+            <Img classes={"w-full"} img="/game.png"/>
                 
-            </Section>
             <Section width={"w-full"} logos={["/cpp.png", "/sfml.png"]}>
                 Space invaders
                 <p>game for final project in C++ course at Universisty</p>

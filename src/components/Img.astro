@@ -1,0 +1,14 @@
+---
+interface Props{
+    img: string;
+    classes?: String;
+}
+
+const { img, classes } = Astro.props;
+
+---
+
+<img src={img} alt={img} class=` ${classes} rounded-2xl h-auto`>
+
+
+
