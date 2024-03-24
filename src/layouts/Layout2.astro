@@ -18,7 +18,7 @@ const { title, next, placeholder } = Astro.props;
 	<SpeedInsights/>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Added initial-scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Added initial-scale -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -34,7 +34,7 @@ const { title, next, placeholder } = Astro.props;
 			<a class='p-12 text-lg underline' href={next}>{placeholder? placeholder : next}</a>
 		</div>
         <h1 class="text-3xl font-extrabold m-auto">Maciej Płonka</h1>
-        <p class="text-xl font-extrabold m-auto">This website was built using Astro</p>
+        <p class="text-xl font-extrabold m-auto">{Astro.generator}</p>
     </footer>
 
 
