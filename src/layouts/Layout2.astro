@@ -25,7 +25,7 @@ const { title, next, placeholder } = Astro.props;
 </head>
 
 <body>
-    <div class="w-full flex justify-between absolute p-4 text-white">
+    <div class="mobile-off w-full flex justify-between absolute p-4 text-white">
         <a class='p-12 text-lg underline' href="/">Home</a>
         <a class='p-12 text-lg underline' href={next}>{placeholder? placeholder : next}</a>
     </div>
@@ -119,6 +119,10 @@ const { title, next, placeholder } = Astro.props;
 		footer {
 			position: relative;
 			height: 50vh;
+		}
+
+		.mobile-off {
+			display: none;
 		}
     }
 
