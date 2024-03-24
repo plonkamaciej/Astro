@@ -25,15 +25,14 @@ const { title, next, placeholder } = Astro.props;
 </head>
 
 <body>
-    <div class="mobile-off w-full flex justify-between absolute p-4 text-white">
-        <a class='p-12 text-lg underline' href="/">Home</a>
-        <a class='p-12 text-lg underline' href={next}>{placeholder? placeholder : next}</a>
-    </div>
     <slot/>
 </body>
 
     <footer class="bg-[#0a0a11] w-full text-white flex flex-col justify-center">
-       
+		<div class="w-full flex justify-between p-4">
+			<a class='p-12 text-lg underline' href="/">Home</a>
+			<a class='p-12 text-lg underline' href={next}>{placeholder? placeholder : next}</a>
+		</div>
         <h1 class="text-3xl font-extrabold m-auto">Maciej Płonka</h1>
         <p class="text-xl font-extrabold m-auto">This website was built using Astro</p>
     </footer>
@@ -110,7 +109,6 @@ const { title, next, placeholder } = Astro.props;
 @media only screen and (max-width: 600px) { /* Example breakpoint for smartphones */
         html {
             height: auto; /* Remove fixed height */
-			width: 100%;
 			overflow-x: hidden;
         }
 		body {
@@ -119,10 +117,6 @@ const { title, next, placeholder } = Astro.props;
 		footer {
 			position: relative;
 			height: 50vh;
-		}
-
-		.mobile-off {
-			display: none;
 		}
     }
 

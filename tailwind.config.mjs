@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			gridTemplateColumns: {
-				'fluid': 'repeat(auto-fit, minmax(25rem, 1fr))',
+				'fluid': 'repeat(auto-fit, minmax(20rem, 1fr))',
 			  }
 		},
 	},
