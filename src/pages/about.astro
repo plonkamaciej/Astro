@@ -1,7 +1,10 @@
 ---
 import Layout from "../layouts/Layout2.astro"
 import Card from '../components/Section.astro';
+import GetCV from '../components/get.astro';
+
 ---
+
 
 <Layout title="Learning", next="https://github.com/plonkamaciej", placeholder="Github">
     <main>
@@ -10,7 +13,9 @@ import Card from '../components/Section.astro';
         </h1>
         <div class="grid grid-cols-fluid gap-1 justify-center mb-6">
           <Card title={"Explorer"} bg={"bg-orange-400 row-span-2"} />
-          <Card title={"Pasionate"} bg={"bg-red-400"} />
+          <Card title={"Certificated"} bg={"bg-red-400"} 
+          body={"HTML, CSS, JAVASCRIPT cerificate 2019 Erasmus+, Maximilian Schwarzmüller Udemy course, EE09 Certificated"}
+          />
           <Card title={"test1"} bg={"bg-purple-400"} />
           <Card title={"test2"} bg={"bg-yellow-400"} />
           <Card title={"Student!"} 
@@ -18,7 +23,9 @@ import Card from '../components/Section.astro';
           "Hey there! I'm Maciej, a 23-year-old student at Politechnika Śląska. With five years in front-end and three in backend development, I'm passionate about tech. At university, I'm expanding my knowledge while staying ahead of industry trends. Outside of class, I love exploring emerging technologies. I thrive on challenges, whether crafting sleek interfaces or building robust backend systems."
           } 
           bg={"bg-blue-400"} />
-          <Card title={"test2"} bg={"bg-green-400 sm:col-span-2 md:col-span-3"} />
+          <Card title={"Download CV"} bg={"bg-green-400 sm:col-span-2 md:col-span-3"}
+          body={""} />
+          <GetCV title="GET CV" href="/CV.pdf">
 
         </div>
     </main>
