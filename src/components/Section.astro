@@ -4,17 +4,17 @@ import type { AnyZodObject } from 'astro/zod';
 interface Props{
     title?: String;
     bg: String;
-    body?: any
+    pclass?: String;
 
 }
 
-const { title, bg, body } = Astro.props;
+const { title, bg, pclass } = Astro.props;
 
 ---
 
 <div class={`shadow-lg ${bg} rounded w-auto h-auto text-white text-center`}>
 <h1 class=" p-4 font-extrabold text-2xl">{title}</h1>
-<p class=" p-4 font-medium text-base text-pretty">{body}</p>
+<p class={` ${pclass} p-4 font-medium text-base text-pretty`}><slot/></p>
 </div>
 
 

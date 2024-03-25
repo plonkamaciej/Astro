@@ -24,9 +24,9 @@ const { title, next, placeholder } = Astro.props;
     <title>{title}</title>
 </head>
 
-<body>
+<body class="h-full">
     <slot/>
-</body>
+</body >
 
     <footer class="bg-[#0a0a11] w-full text-white flex flex-col justify-center">
         <div class="w-full flex justify-between">
@@ -58,13 +58,11 @@ const { title, next, placeholder } = Astro.props;
 		background-image:  
 		radial-gradient(closest-corner circle at 50% 80%, rgb(42, 63, 112) 0%, rgba(0, 0, 0, 0) 70%, transparent),
 		radial-gradient(closest-corner circle at 100% 40%, rgb(69, 31, 24) 0%, rgba(0, 0, 0, 0) 75%, transparent),
-		
 		url("/bg-grid.webp");
 		background-repeat: repeat;
-		height: 120vh;
 		box-shadow: inset 100vw 0 0 0 rgba(11, 6, 6, 0.2);
 		scroll-behavior: smooth;
-		
+		height: 100%;
 		
 	}
 	code {
@@ -94,32 +92,48 @@ const { title, next, placeholder } = Astro.props;
   
 }
 
-@media screen and (min-width: 800px) {
-
-		footer {
-			position: relative;
-			height: 50vh;
-		}	
-
-		body {
-			height: 100%;
-		}
-}
-
-
-@media only screen and (max-width: 600px) { /* Example breakpoint for smartphones */
-        html {
-            height: auto; /* Remove fixed height */
-			width: 100%;
-			overflow-x: hidden;
+@media screen and (min-width: 1921px) {
+        footer {
+          position: fixed;
+		  bottom: 0;
+		  height: 30vh;
         }
-		body {
-			height: 100%;
-		}
-		footer {
-			position: relative;
-			height: 50vh;
-		}
-    }
+      }
 
+      @media screen and (min-width: 800px) and (max-width: 1920px) {
+        footer {
+          position: fixed;
+		  bottom: 0;
+          height: 40vh;
+        }
+		html {
+          height: 100%;
+        }
+      }
+
+	  @media screen and (min-width: 601px) and (max-width: 799px) {
+        footer {
+          position: relative;
+		  bottom: 0;
+          height: 40vh;
+        }
+		html {
+          height: 100%;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        /* Example breakpoint for smartphones */
+        html {
+          height: auto; /* Remove fixed height */
+          overflow-x: hidden;
+        }
+        body {
+          height: 100%;
+        }
+        footer {
+          position: relative;
+          height: 50vh;
+        }
+      }
 </style>

@@ -1,124 +1,148 @@
 ---
-import  SpeedInsights  from "@vercel/speed-insights/astro"
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
-	title: string;
-	next: string;
-	placeholder?: string;
+  title: string;
+  next: string;
+  placeholder?: string;
 }
-
 
 const { title, next, placeholder } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-
-<head>
-	<SpeedInsights/>
+  <head>
+    <SpeedInsights />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Added initial-scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Added initial-scale -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-</head>
+  </head>
 
-<body>
-    <slot/>
-</body>
-
+  <body class="g-full">
+    <slot />
     <footer class="bg-[#0a0a11] w-full text-white flex flex-col justify-center">
-		<div class="w-full flex justify-between p-4">
-			<a class='p-12 text-lg underline' href="/">Home</a>
-			<a class='p-12 text-lg underline' href={next}>{placeholder? placeholder : next}</a>
-		</div>
-        <h1 class="text-3xl font-extrabold m-auto">Maciej Płonka</h1>
-        <p class="text-xl font-extrabold m-auto">{Astro.generator}</p>
+      <div class="w-full flex justify-between p-4">
+        <a class="p-12 text-lg underline" href="/">Home</a>
+        <a class="p-12 text-lg underline" href={next}
+          >{placeholder ? placeholder : next}</a
+        >
+      </div>
+      <h1 class="text-3xl font-extrabold m-auto">Maciej Płonka</h1>
+      <p class="text-xl font-extrabold m-auto">{Astro.generator}</p>
     </footer>
+    <style is:global>
+      :root {
+        --accent: 236, 58, 34;
+        --accent-light: 255, 114, 60;
+        --accent-dark: 255, 114, 60;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        background-color: #0a0a11;
+        background-image: radial-gradient(
+            closest-corner circle at 50% 80%,
+            rgb(42, 63, 112) 0%,
+            rgba(0, 0, 0, 0) 70%,
+            transparent
+          ),
+          radial-gradient(
+            closest-corner circle at 100% 40%,
+            rgb(69, 31, 24) 0%,
+            rgba(0, 0, 0, 0) 75%,
+            transparent
+          ),
+          url("/bg-grid.webp");
+        background-repeat: repeat;
+        box-shadow: inset 100vw 0 0 0 rgba(11, 6, 6, 0.2);
+        scroll-behavior: smooth;
+		height: 100%;
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
 
+      #overlay {
+        position: fixed; /* Sit on top of the page content */
+        display: block; /* Hidden by default */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.3
+        ); /* Black background with opacity */
+        z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+      }
 
-</html>
-
-<style is:global>
-	:root {
-		--accent: 236, 58, 34;
-		--accent-light: 255, 114, 60;
-		--accent-dark: 255, 114, 60;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #0a0a11;
-		background-image:  
-		radial-gradient(closest-corner circle at 50% 80%, rgb(42, 63, 112) 0%, rgba(0, 0, 0, 0) 70%, transparent),
-		radial-gradient(closest-corner circle at 100% 40%, rgb(69, 31, 24) 0%, rgba(0, 0, 0, 0) 75%, transparent),
-		
-		url("/bg-grid.webp");
-		background-repeat: repeat;
-		box-shadow: inset 100vw 0 0 0 rgba(11, 6, 6, 0.2);
-		scroll-behavior: smooth;
-		
-		
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-
-
-	#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: block; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.3); /* Black background with opacity */
-  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
   
-}
-
-@media screen and (min-width: 800px) {
-
-		footer {
-			margin-top: 2rem;
-			position: relative;
-			height: 50vh;
-		}	
-
-		body {
-			height: 100%;
-		}
-}
-
-
-@media only screen and (max-width: 600px) { /* Example breakpoint for smartphones */
-        html {
-            height: auto; /* Remove fixed height */
-			overflow-x: hidden;
+@media screen and (min-width: 1921px) {
+        footer {
+          position: fixed;
+		  bottom: 0;
+		  height: 20vh;
         }
-		body {
-			height: 100%;
-		}
-		footer {
-			position: relative;
-			height: 50vh;
-		}
-    }
+      }
 
-</style>
+      @media screen and (min-width: 800px) and (max-width: 1920px) {
+        footer {
+          position: relative;
+		  bottom: 0;
+          height: 40vh;
+        }
+		html {
+          height: 100%;
+        }
+      }
+
+	  @media screen and (min-width: 601px) and (max-width: 799px) {
+        footer {
+          position: relative;
+		  bottom: 0;
+          height: 40vh;
+        }
+		html {
+          height: 100%;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        /* Example breakpoint for smartphones */
+        html {
+          height: auto; /* Remove fixed height */
+          overflow-x: hidden;
+        }
+        body {
+          height: 100%;
+        }
+        footer {
+          position: relative;
+          height: 50vh;
+        }
+      }
+    </style>
+  </body>
+</html>

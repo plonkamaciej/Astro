@@ -7,6 +7,5 @@ interface Props {
 const { href, title} = Astro.props;
 ---
 
-<button class=" rounded-md bg-green-700 text-white hover:bg-green-500">
- <a href={href}>{title}</a>
-</button>
+
+ <a href={href}><button class="p-4 rounded-xl bg-green-600 text-white hover:bg-green-700">{title}</button></a>
