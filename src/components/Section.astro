@@ -1,5 +1,5 @@
 ---
-import type { AnyZodObject } from 'astro/zod';
+import { string, type AnyZodObject } from 'astro/zod';
 
 interface Props{
     title?: String;
@@ -9,12 +9,13 @@ interface Props{
 }
 
 const { title, bg, pclass } = Astro.props;
-
+var className: String;
+pclass ? className = pclass : className = "p-6 font-medium text-base text-justify text-pretty";
 ---
 
 <div class={`shadow-lg ${bg} rounded w-auto h-auto text-white text-center`}>
 <h1 class=" p-4 font-extrabold text-2xl">{title}</h1>
-<p class={` ${pclass} p-4 font-medium text-base text-pretty`}><slot/></p>
+<p class={` ${className}`}><slot/></p>
 </div>
 
 

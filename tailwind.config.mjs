@@ -5,9 +5,13 @@ export default {
 		extend: {
 			gridTemplateColumns: {
 				'fluid': 'repeat(auto-fit, minmax(20rem, 1fr))',
-			  }
+			  },
+			  screens: {
+				'mobile': '200px',
+			  },
 		},
 	},
+
 	
 	plugins: [],
 }
