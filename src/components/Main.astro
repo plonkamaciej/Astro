@@ -3,9 +3,10 @@ interface Props{
     width: String;
     img?: string;
     logos?: Array<string>;
+    LogoWight?: number;
     
 }
-const { width, img, logos} = Astro.props;
+const { width, img, logos, LogoWight} = Astro.props;
 ---
 
 <div class={`${img ? "" : "rounded-2xl"} overflow-hidden shadow-lg  ${width} bg-slate-200`}>
@@ -16,7 +17,7 @@ const { width, img, logos} = Astro.props;
             <div class="flex p-8 justify-evenly bg-white w-full">
 
                 {logos.map((logo, index) => (
-          <img width="100" src={logo} alt={`Logo ${index}`} />
+          <img width={LogoWight ? LogoWight : 100}  src={logo} alt={`Logo ${index}`} />
         ))}
 
 
